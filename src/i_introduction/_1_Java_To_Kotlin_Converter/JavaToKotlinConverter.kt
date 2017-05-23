@@ -12,6 +12,17 @@ fun todoTask1(collection: Collection<Int>): Nothing = TODO(
     references = { JavaCode1().task1(collection) })
 
 
-fun task1(collection: Collection<Int>): String {
-    todoTask1(collection)
+fun task1(collection: Collection<Int>) : String {
+    val sb = StringBuilder()
+    sb.append("{")
+    val iter : Iterator<Int> = collection.iterator()
+    while (iter.hasNext()) {
+        val element : Int = iter.next()
+        sb.append(element)
+        if (iter.hasNext()) {
+            sb.append(", ")
+        }
+    }
+    sb.append("}")
+    return sb.toString()
 }
