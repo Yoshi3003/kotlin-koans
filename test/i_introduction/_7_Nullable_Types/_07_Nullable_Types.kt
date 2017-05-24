@@ -4,12 +4,8 @@ import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class _07_Nullable_Types {
-    fun testSendMessageToClient(
-            client: Client?,
-            message: String?,
-            email: String? = null,
-            shouldBeInvoked: Boolean = false
-    ) {
+    fun testSendMessageToClient(client: Client?, message: String?, email: String? = null,
+                                shouldBeInvoked: Boolean = false) {
         var invoked = false
         sendMessageToClient(client, message, object : Mailer {
             override fun sendMessage(actualEmail: String, actualMessage: String) {
